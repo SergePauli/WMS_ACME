@@ -1,0 +1,8 @@
+{
+  "port": 5005,
+  "PATH_ACME_EXE": "c:\\acme\\acme.exe",
+  "PATH_ACME_BASE": "c:\\acme\\base\\",
+  "origins": [
+    "http://medss.local:3000/"
+  ]
+}

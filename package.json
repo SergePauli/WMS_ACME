@@ -1,0 +1,26 @@
+{
+  "name": "wms_acme",
+  "version": "1.0.0",
+  "description": "webmicroservice API for use ACME module via html protocol ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ACME",
+    "Windows",
+    "NodeJs",
+    "restAPI",
+    "medicine"
+  ],
+  "author": "Serge Pauli",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "nanoid": "^3.1.16"
+  }
+}
