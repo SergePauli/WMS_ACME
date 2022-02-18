@@ -1,31 +1,18 @@
 const express = require("express")
 const fs = require("fs")
 const { spawn } = require("child_process")
-const cors = require("cors")
 const config = require("config")
 const { nanoid } = require("nanoid")
 const router = express.Router()
-const WIHTE_LIST = config.get("origins")
-
-//разрешаем доступ к POST только для запросов
-//с frontend-серверов
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (WIHTE_LIST.indexOf(origin) !== -1 || !origin) {
-      callback(null, true)
-    } else {
-      callback(new Error("Not allowed by CORS"))
-    }
-  },
-}
 
 // define the home page route
-router.get("/", cors(corsOptions), function (req, res) {
+router.get("/", function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*")
   res.send("<h1>ACME API microservice  home page</h1> <br/> ")
 })
 
 // define ACME reuest route
-router.post("/useACME", cors(corsOptions), async (req, res) => {
+router.post("/useACME", async (req, res) => {
   // вызываем с преобработкой
   console.log("request runed")
   try {
